@@ -60,6 +60,12 @@ RUN apt-add-repository ppa:openjdk-r/ppa \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+# Install Ant
+RUN apt-get update \
+  && apt-get -y install ant \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
 # Environment variables
 ENV ANDROID_HOME /usr/local/android-sdk
 ENV ANDROID_SDK_HOME $ANDROID_HOME
